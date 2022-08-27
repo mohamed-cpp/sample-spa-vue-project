@@ -1,12 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <NavBar />
+  <div class="container lg:mx-auto">
+    <router-view />
+  </div>
 </template>
+<script>
+// @ is an alias to /src
+import NavBar from "@/components/layouts/NavBar";
+
+export default {
+  name: "APP",
+  components: {
+    NavBar,
+  },
+};
+</script>
 
 <style>
+body {
+  background-image: url("@/assets/background_image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

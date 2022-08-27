@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <UserInfo></UserInfo>
+    <MainBox
+      v-for="(data, key) in getData"
+      :key="key"
+      :id="'row-' + data.id"
+      :dataRow="data"
+    >
+    </MainBox>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import MainBox from "@/components/boxes/MainBox";
+import UserInfo from "@/components/UserInfo";
+import { mapGetters } from "vuex";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    MainBox,
+    UserInfo,
   },
+  computed: {
+    ...mapGetters("db", ["getData"]),
+  },
+  created() {},
+  updated() {},
+  methods: {},
 };
 </script>
