@@ -1,12 +1,10 @@
 # spa-vue-project
+### [Sample Review, Click here](http://vue-spa.rf.gd/)
 
 ## Project setup
-```
-npm install
-```
-
 ### Compiles and hot-reloads for development
 ```
+npm install
 npm run serve
 ```
 
@@ -15,10 +13,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
