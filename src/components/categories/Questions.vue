@@ -12,6 +12,7 @@
       :id="'Questions-' + data.id"
       :fatherId="dataRow.id"
       :checkedArr="!!answersArr[data.id]"
+      :set="set_old_id(data.id)"
       :dataRow="data"
     ></Answers>
   </ul>
@@ -35,9 +36,14 @@ export default {
     };
   },
   created() {
-    console.log(this.dataRow.id, this.fatherId);
+    //console.log(this.dataRow.id, this.fatherId);
   },
   methods: {
+    set_old_id(id) {
+      if (this.answersArr[id] != null) {
+        this.old_id = id;
+      }
+    },
     add_score(id, score) {
       this.setScore({
         old_id: this.old_id,
